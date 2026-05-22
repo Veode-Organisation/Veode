@@ -117,6 +117,83 @@ function initSmoothScrolling() {
   });
 }
 
+function initCommunityPage() {
+  const form = document.getElementById('community-form');
+  const commentList = document.getElementById('comment-list');
+  if (!form || !commentList) {
+    return;
+  }
+
+  const STORAGE_KEY = 'veodeCommunityComments';
+
+  const loadComments = () => {
+    const stored = window.localStorage.getItem(STORAGE_KEY);
+    return stored ? JSON.parse(stored) : [];
+  };
+
+  const saveComments = (comments) => {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+  };
+
+  const renderComments = () => {
+    const comments = loadComments();
+    commentList.innerHTML = '';
+
+    if (!comments.length) {
+      const empty = document.createElement('p');
+      empty.className = 'comment-empty';
+      empty.textContent = 'No comments yet. Be the first to share!';
+      commentList.appendChild(empty);
+      return;
+    }
+
+    comments.slice().reverse().forEach((comment) => {
+      const card = document.createElement('article');
+      card.className = 'comment-card';
+
+      const author = document.createElement('strong');
+      author.textContent = comment.name || 'Anonymous';
+
+      const time = document.createElement('time');
+      time.textContent = new Date(comment.date).toLocaleString();
+
+      const message = document.createElement('p');
+      message.textContent = comment.message;
+
+      card.appendChild(author);
+      card.appendChild(time);
+      card.appendChild(message);
+      commentList.appendChild(card);
+    });
+  };
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const nameInput = document.getElementById('comment-name');
+    const messageInput = document.getElementById('comment-message');
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (!message) {
+      return;
+    }
+
+    const comments = loadComments();
+    comments.push({
+      name: name || 'Anonymous',
+      message,
+      date: new Date().toISOString(),
+    });
+
+    saveComments(comments);
+    renderComments();
+    form.reset();
+  });
+
+  renderComments();
+}
+
 function initMobileNav() {
   const navToggle = document.querySelector('.nav-toggle');
   const siteNav = document.querySelector('.site-nav');
@@ -153,4 +230,5 @@ function initMobileNav() {
 initScrollAnimations();
 initSmoothScrolling();
 initMobileNav();
+initCommunityPage();
 initStepLesson();

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veode Community</title>
+    <link rel="icon" type="image/png" href="../veode.png" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="../">Veode</a>
+        <nav class="site-nav">
+          <a href="../">Home</a>
+          <a href="../support/">Support</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section animate fade-up">
+        <div class="container">
+          <p class="eyebrow">Community</p>
+          <h1>Share feedback and comments about Veode</h1>
+          <p>
+            Post your thoughts, questions, or suggestions about the website. Your comments will be saved locally in your browser for review.
+          </p>
+          <div class="community-content">
+            <form class="community-form" id="community-form">
+              <label for="comment-name">Name</label>
+              <input id="comment-name" type="text" placeholder="Your name" required />
+              <label for="comment-message">Comment</label>
+              <textarea id="comment-message" rows="5" placeholder="What do you think of Veode?" required></textarea>
+              <button class="btn btn-primary" type="submit">Post comment</button>
+            </form>
+
+            <div class="comment-panel">
+              <h2>Recent comments</h2>
+              <div class="comment-list" id="comment-list">
+                <p class="comment-empty">No comments yet. Be the first to share!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Veode community board</p>
+      </div>
+    </footer>
+    <script src="../script.js"></script>
+  </body>
+</html>
