@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veode | Learn Coding Step by Step</title>
+    <link rel="icon" type="image/png" href="veode.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home">Veode</a>
+        <nav class="site-nav">
+          <a href="support/">Support</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="#lessons">Lessons</a>
+          <a href="#start">Start</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero animate fade-up" id="home">
+        <div class="container hero-content">
+          <div class="hero-copy-group">
+            <p class="eyebrow">Step-by-step learning</p>
+            <h1>Learn coding with clear lessons, practice, and confidence.</h1>
+            <p class="hero-copy">
+              Veode guides you through the fundamentals of web development with real examples, hands-on steps, and easy progress tracking.
+            </p>
+            <a class="btn btn-primary" href="#start">Start learning</a>
+            <p class="support-note">
+              Need help? <a href="support/">Visit support</a> for contact details and community help.
+            </p>
+          </div>
+          <div class="hero-media">
+            <img class="hero-image" src="veode.png" alt="Veode main illustration" />
+            <div class="hero-card animate fade-up">
+              <p class="card-label">Lesson preview</p>
+              <h2>Lesson 1: HTML basics</h2>
+              <p>Build your first web page structure while learning tags, headings, and paragraphs.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how-it-works">
+        <div class="container section-grid">
+          <div class="section-text">
+            <p class="eyebrow">How Veode works</p>
+            <h2>Learn coding one step at a time</h2>
+            <p>
+              Veode breaks down each topic into bite-sized lessons with clear explanations, code examples, and interactive steps so you can build skills fast.
+            </p>
+          </div>
+          <div class="feature-cards">
+            <article class="feature-card animate fade-up">
+              <h3>Structured lessons</h3>
+              <p>Follow a guided path from fundamentals to practical web development topics.</p>
+            </article>
+            <article class="feature-card animate fade-up">
+              <h3>Practice-first</h3>
+              <p>Apply what you learn immediately with examples and mini challenges.</p>
+            </article>
+            <article class="feature-card animate fade-up">
+              <h3>Progress tracking</h3>
+              <p>See your progress as you move through each step and build confidence.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="lessons">
+        <div class="container">
+          <p class="eyebrow">Core lessons</p>
+          <h2>Start with the fundamentals</h2>
+          <div class="lesson-grid">
+            <article class="lesson-card animate fade-up">
+              <h3>HTML</h3>
+              <p>Learn page structure, headings, lists, links, and how HTML builds the web.</p>
+            </article>
+            <article class="lesson-card animate fade-up">
+              <h3>CSS</h3>
+              <p>Style your pages with color, layout, spacing, and responsive design.</p>
+            </article>
+            <article class="lesson-card animate fade-up">
+              <h3>JavaScript</h3>
+              <p>Make your pages interactive with logic, events, and dynamic elements.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section animate fade-up" id="start">
+        <div class="container step-section">
+          <div class="step-panel animate fade-up">
+            <p class="eyebrow">Interactive path</p>
+            <h2>Follow the first coding lesson</h2>
+            <div class="step-overview">
+              <span id="step-number">Step 1</span>
+              <progress id="step-progress" value="1" max="3"></progress>
+            </div>
+            <h3 id="step-title">Intro to HTML</h3>
+            <p id="step-description">Learn what HTML is and how a simple page is structured.</p>
+            <pre class="code-block" id="step-code"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;My Page&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <div class="step-actions">
+              <button class="btn btn-secondary" id="prev-step">Previous</button>
+              <button class="btn btn-primary" id="next-step">Next</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Veode | Learn coding step by step</p>
+        <p>Built for beginners who want fast, practical progress.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
