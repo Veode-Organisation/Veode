@@ -117,6 +117,40 @@ function initSmoothScrolling() {
   });
 }
 
+function initMobileNav() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const navBackdrop = document.querySelector('.nav-backdrop');
+  if (!navToggle || !siteNav || !navBackdrop) {
+    return;
+  }
+
+  const setNavState = (open) => {
+    siteNav.classList.toggle('open', open);
+    navBackdrop.classList.toggle('visible', open);
+    document.body.classList.toggle('nav-open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  };
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = siteNav.classList.contains('open');
+    setNavState(!isOpen);
+  });
+
+  navBackdrop.addEventListener('click', () => setNavState(false));
+
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setNavState(false));
+  });
+
+  const navClose = siteNav.querySelector('.nav-close');
+  if (navClose) {
+    navClose.addEventListener('click', () => setNavState(false));
+  }
+}
+
 initScrollAnimations();
 initSmoothScrolling();
+initMobileNav();
 initStepLesson();

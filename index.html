@@ -11,7 +11,11 @@
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#home">Veode</a>
+        <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
+          <span></span>
+        </button>
         <nav class="site-nav">
+          <button class="nav-close" aria-label="Close navigation">×</button>
           <a href="support/">Support</a>
           <a href="#how-it-works">How it works</a>
           <a href="#lessons">Lessons</a>
@@ -19,6 +23,7 @@
         </nav>
       </div>
     </header>
+    <div class="nav-backdrop" aria-hidden="true"></div>
 
     <main>
       <section class="hero animate fade-up" id="home">
